@@ -1,0 +1,180 @@
+/* Base layout reset */
+* {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+    color: #222;
+  }
+  
+  /* Wrapper to keep footer pinned to the bottom */
+  .page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Header */
+  header {
+    background: #f9f9f9;
+    padding: 0.5rem 1rem;
+    text-align: left; /* language links on the left */
+    font-size: 0.9rem;
+  }
+  
+  .language-switcher a {
+    color: #555;
+    text-decoration: none;
+    margin: 0 0.4rem;
+  }
+  
+  .language-switcher a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Main content */
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 2rem auto 2rem 2rem;
+  }
+  
+  /* Photo container */
+  .photo-container {
+    width: 180px;
+    height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #eee;
+  
+    /* Prevent shrinking if window is small */
+    flex-shrink: 0;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Placeholder or actual image */
+  .photo-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    font-size: 0.9rem;
+    color: #666;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .intro-text h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .intro-text p {
+    font-size: 1rem;
+    color: #444;
+  }
+
+/* Top row: photo + text */
+.top-section {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+  
+  /* News block below */
+  .news-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .news-section ul {
+    padding-left: 1.2rem;
+    margin: 0;
+  }
+  
+  .news-section li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+  
+  .news-section a {
+    font-size: 0.9rem;
+    color: #333;
+    text-decoration: underline;
+  }
+  
+/* Make the footer full-width with a custom background */
+footer {
+    background: #9AAE9A; /* (example greenish color) */
+    padding: 2rem 1rem;
+    color: #fefefe;
+    text-align: center;
+  }
+  
+  /* 
+    The row of icons in the center
+    Use flex to center them horizontally
+  */
+  .footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;  /* space between icons */
+    margin-bottom: 1rem; /* space below the icons */
+  }
+  
+  /* 
+    Each icon is a circle button 
+    with a dark background or 
+    the same as the footer if you prefer 
+  */
+  .icon-btn {
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #444; /* dark circles, can be changed */
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+  
+  /* The actual icon inside the circle */
+  .icon-btn img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    /* 
+       Above filter turns a black SVG icon into white 
+       if the icon is originally black. 
+       If you have a white SVG, remove this. 
+    */
+  }
+  
+  /* Footer text line (name, year, site link) */
+  .footer-text {
+    font-size: 0.9rem;
+    color: #fefefe;
+  }
+  
+  /* If you want to style links in footer text differently */
+  .footer-text a {
+    color: #ddd;
+    text-decoration: underline;
+  }
+  .footer-text a:hover {
+    color: #fff;
+  }
