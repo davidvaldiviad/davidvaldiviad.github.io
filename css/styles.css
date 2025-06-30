@@ -37,15 +37,95 @@
     text-decoration: underline;
   }
   
-  /* Main content */
+  /* Main container: row for content + sidebar */
   main {
-    flex: 1;
+    flex: 1;              /* so it stretches in vertical to push footer if short */
+    margin: 2rem 2rem;    /* normal top/bottom/left margin */
+    margin-right: 220px;  /* space for the pinned sidebar's 200px width + a bit of gap */
+    max-width: 1200px;    /* optional, remove if you want full width */
+  }
+  
+  /* The main content area (photo, news, etc.) */
+  .main-content {
+    flex: 1;             /* Take remaining width */
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-    max-width: 1000px;
-    margin: 2rem auto 2rem 2rem;
+    gap: 3rem;           /* space between top-section and news-section */
   }
+
+/* ---------- removed old sidebar specifics ---------- */
+/* 1) Delete the entire .sidebar rule block and any rules for .sidebar-nav */
+/* 2) In the main layout, drop the margin-right that made room for the sidebar */
+
+main {
+  flex: 1;
+  margin: 2rem auto;      /* centred, no extra right-margin */
+  max-width: 1000px;      /* play with width as you like */
+}
+
+/* ---------- header inspired by Junwon Lee layout ---------- */
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem 2rem;
+  position: relative;
+}
+
+.site-logo {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: .15rem;
+  margin: 0;
+  text-transform: lowercase;
+}
+
+.site-nav {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.site-nav a {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+  text-decoration: none;
+}
+
+.site-nav a:hover { text-decoration: underline; }
+
+/* language switcher now floats top-right */
+.language-switcher {
+  position: absolute;
+  top: .5rem;
+  right: 1rem;
+  font-size: .9rem;
+}
+
+.language-switcher a { color: #555; }
+
+/* ---------- hero (photo + intro) ---------- */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.intro-text h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 .5rem;
+}
+
+.intro-text p { color: #444; }
+
+/* ---------- news ---------- */
+.news-section h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+
+/* ---------- everything else (footer, etc.) stays the same ---------- */
+
   
   /* Photo container */
   .photo-container {
